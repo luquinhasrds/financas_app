@@ -20,10 +20,11 @@ class OnbordingPage extends StatelessWidget {
             height: 48.0,
           ),
           Expanded(
-            flex: 2,
-            child: Image.asset('assets/images/boneco.png'),
+            child: Image.asset('assets/images/boneco.png'
+            ),
           ),
           Text(
+            textAlign: TextAlign.center,
             'Spend Smarter',
             style: AppTextStyles.mediumText.copyWith(
               color: AppColors.greenLightTwo,
@@ -33,6 +34,7 @@ class OnbordingPage extends StatelessWidget {
             height: 24.0,
           ),
           Text(
+            textAlign: TextAlign.center,
             ' Save More',
             style: AppTextStyles.mediumText.copyWith(
               color: AppColors.greenLightTwo,
@@ -54,7 +56,7 @@ class OnbordingPage extends StatelessWidget {
             height: 16.0,
           ),
           MultiTextButton(
-            onPressed: ()=> log('Log in'),
+            onPressed: () => log('Log in'),
             children: [
               Text(
                 'Already have a account? ',
