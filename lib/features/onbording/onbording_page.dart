@@ -2,7 +2,9 @@ import 'dart:developer';
 
 import 'package:financas_app/Common/constants/app_colors.dart';
 import 'package:financas_app/Common/constants/app_text_styles.dart';
+import 'package:financas_app/Common/widgets/MultiTextButton.dart';
 import 'package:financas_app/Common/widgets/primary_button.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class OnbordingPage extends StatelessWidget {
@@ -37,9 +39,11 @@ class OnbordingPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 32.0,
-              vertical: 16.0,
+            padding: const EdgeInsets.only(
+              left: 32.0,
+              right: 32.0,
+              top: 16.0,
+              bottom: 4.0,
             ),
             child: PrimaryButton(
               text: 'Get Started',
@@ -49,9 +53,22 @@ class OnbordingPage extends StatelessWidget {
           SizedBox(
             height: 16.0,
           ),
-          Text(
-            'Already have a account? Log In',
-            style: AppTextStyles.smallText.copyWith(color: AppColors.grey),
+          MultiTextButton(
+            onPressed: ()=> log('Log in'),
+            children: [
+              Text(
+                'Already have a account? ',
+                style: AppTextStyles.smallText.copyWith(
+                  color: AppColors.grey,
+                ),
+              ),
+              Text(
+                ' Log In',
+                style: AppTextStyles.smallText.copyWith(
+                  color: AppColors.greenLightTwo,
+                ),
+              ),
+            ],
           ),
           SizedBox(height: 40.0),
         ],
